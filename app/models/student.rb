@@ -34,6 +34,12 @@ class Student
     # puts 'done'
   end
 
+# #Guy solution
+#
+# def tests
+#   BoatingTest.all.select{|test| text.student == self}
+# end
+
 def grade_percentage
   grade = tests.count {|test| test.status == "passed"} / test.count.to_f
   # binding.pry
