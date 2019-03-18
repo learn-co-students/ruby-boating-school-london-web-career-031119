@@ -1,0 +1,11 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	0	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+reload	/Users/manon/Development/code/ruby-boating-school-london-web-career-031119/tools/console.rb	/^def reload$/;"	method	line:3
+Student	/Users/manon/Development/code/ruby-boating-school-london-web-career-031119/app/models/student.rb	/^class Student$/;"	class	line:1
+BoatingTest	/Users/manon/Development/code/ruby-boating-school-london-web-career-031119/app/models/boatingtest.rb	/^class BoatingTest$/;"	class	line:1
+Instructor	/Users/manon/Development/code/ruby-boating-school-london-web-career-031119/app/models/instructor.rb	/^class Instructor$/;"	class	line:1
+mod1-code-review-boating-school	/Users/manon/Development/code/ruby-boating-school-london-web-career-031119/README.md	/^# mod1-code-review-boating-school$/;"	function	line:1
