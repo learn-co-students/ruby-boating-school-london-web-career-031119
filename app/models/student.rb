@@ -18,7 +18,7 @@ class Student
   end
 
   def self.find_student(name)
-    BoatingTest.all.select {|test| test.student == name}
+    BoatingTest.all.find {|test| test.student == name}
   end
 
   def grade_percentage

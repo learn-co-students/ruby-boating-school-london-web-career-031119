@@ -20,8 +20,8 @@ class Instructor
   end
 
   def pass_student(student, test_name)
-    if find_student_test(student, test_name) != nil
-      selected = find_student_test(student, test_name)
+    selected = find_student_test(student, test_name)
+    if selected
       selected.status = "passed"
     else
       selected = BoatingTest.new(student: student, test_name: test_name, status: "passed", instructor: self)
@@ -30,8 +30,8 @@ class Instructor
   end
 
   def fail_student(student, test_name)
-    if find_student_test(student, test_name) != nil
-      selected = find_student_test(student, test_name)
+    selected = find_student_test(student, test_name)
+    if selected
       selected.status = "failed"
     else
       selected = BoatingTest.new(student: student, test_name: test_name, status: "failed", instructor: self)
