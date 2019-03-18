@@ -19,6 +19,8 @@ class Instructor
     s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student}.first
     if !!s_test
       s_test.status = "passed"
+    else
+      BoatingTest.new(student, test_name, "passed", self)
     end
   end
 
@@ -27,6 +29,8 @@ class Instructor
     s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student}.first
     if !!s_test
       s_test.status = "failed"
+    else
+      BoatingTest.new(student, test_name, "failed", self)
     end
   end
 
