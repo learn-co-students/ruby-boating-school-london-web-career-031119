@@ -15,11 +15,11 @@ power_steering_failure = patrick.add_boating_test("Power Steering 202", "failed"
 power_steering_pass = patrick.add_boating_test("Power Steering 201", "passed", krabs)
 
 p Student.find_student("Patrick")
-p Student.grade_percentage("Patrick")
+p patrick.grade_percentage
 
- p puff.pass_student(patrick, "Power Steering 201")
+ p puff.fail_student(patrick, "Power Steering 201")
 
-p Student.grade_percentage("Patrick")
+p patrick.grade_percentage
 
 p puff.pass_student(patrick, "TTTTEEESSSTTT")
 

@@ -14,14 +14,14 @@ def add_boating_test(name, test_status, instructor)
 end
 
 def self.find_student(first_name)
-@@all.select do |student|
+Student.all.find do |student|
 first_name == student.first_name
 end
 end
 
-def self.grade_percentage(first_name)
+def grade_percentage
   count = 0
-student = BoatingTest.all.select {|test| test.student.first_name == first_name}
+student = BoatingTest.all.select {|test| test.student == self}
 student.each do |stu|
 if stu.test_status == "passed"
   count += 1

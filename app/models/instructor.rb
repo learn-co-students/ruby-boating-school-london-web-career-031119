@@ -14,6 +14,15 @@ def initialize(name)
 end
 
 def pass_student(student, test_name)
+  test = BoatingTest.all.find {|test| test.student == student && test.name == test_name}
+  if test
+    test.test_status = "passed"
+  else
+      BoatingTest.new(student, test_name, "passed", self)
+    end
+  end
+
+def fail_student(student, test_name)
   count = 0
   BoatingTest.all.each do |test|
 
@@ -27,6 +36,9 @@ end
 end
 BoatingTest.all
 end
+
+
+
 
 
 
