@@ -15,6 +15,7 @@ class Instructor
   end
 
   def pass_student(student, test_name)
+    # s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student && t.instructor == self}.first
     s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student}.first
     if !!s_test
       s_test.status = "passed"
@@ -22,6 +23,7 @@ class Instructor
   end
 
   def fail_student(student, test_name)
+    # s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student && t.instructor == self}.first
     s_test = BoatingTest.all.select{|t| t.name == test_name && t.student == student}.first
     if !!s_test
       s_test.status = "failed"
