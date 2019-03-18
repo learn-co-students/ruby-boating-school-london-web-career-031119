@@ -8,7 +8,7 @@ class BoatingTest
     @test_name = test_name
     @status = status
     @instructor = instructor
-    @@all << self
+    self.class.all << self
   end
 
   def self.all
