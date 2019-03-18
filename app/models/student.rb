@@ -18,10 +18,6 @@ def add_boating_test(test_name,status,instructor)
   BoatingTest.new(self,test_name,status,instructor)
 end
 
-def tests
-  BoatingTest.all.select{|test|test.student == self}
-end
-
 def self.find_student(name)
   self.all.each do |student|
     return student if student.first_name.downcase == name.downcase
@@ -29,10 +25,8 @@ def self.find_student(name)
 end
 
 def self.grade_percentage(student)
-# percentage of tests that the student has passed
-  tests = BoatingTest.all.select{|test| test.student == student}
-  score = tests.select{|test|test.test_status=='passed'}.count.to_f
-  return score / tests.count.to_f * 100
+  tests = BoatingTest.all.select{|test|test.student == self}
+  tests.select{|test|test.test_status=='passed'}.count.to_f / tests.count.to_f * 100
 end
 
 end

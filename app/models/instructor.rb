@@ -14,21 +14,15 @@ class Instructor
   end
 
   def pass_student(student,test_name)
-    BoatingTest.all.each do |test|
-      if test.student == student && test.test_name == test_name
-        return test.test_status = 'passed'
-      end
-    end
-    BoatingTest.new(student,name,'passed',self)
+    pass = BoatingTest.all.find {|test|test.student == student && test.test_name == test_name}
+    pass ? pass.test_status = 'passed' : BoatingTest.new(student,name,'passed',self)
+    pass
   end
 
   def fail_student(student,test_name)
-    BoatingTest.all.each do |test|
-      if test.student == student && test.test_name == test_name
-        return test.test_status = 'failed'
-      end
-    end
-    BoatingTest.new(student,name,'failed',self)
+    fail = BoatingTest.all.find {|test|test.student == student && test.test_name == test_name}
+    fail ? pass.test_status = 'failed' : BoatingTest.new(student,name,'failed',self)
+    fail
   end
 
 end
