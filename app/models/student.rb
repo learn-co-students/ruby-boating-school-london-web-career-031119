@@ -13,18 +13,26 @@ class Student
     end
 
     def self.find_student(first_name)
-        @@all.find { |student| student.first_name == first_name}
+        Student.all.find { |student| student.first_name.downcase == first_name.downcase }
+    end
+
+    def tests
+        BoatingTest.all.select { |test| test.student == self }
     end
 
     def grade_percentage
-        my_tests = BoatingTest.all.select do |test|
-            test.student == self
+        my_tests = 0
+        my_passed_tests = 0
+
+        BoatingTest.all.each do |test|
+            if test.student == self
+                my_tests += 1
+            end
+            if test.status == 'passed' && test.student == self
+                my_passed_tests += 1
+            end
         end
 
-        my_passed_tests = my_tests.select do |test|
-            test.status == 'passed'
-        end
-
-        my_passed_tests.size / my_tests.size.to_f * 100
+        (my_passed_tests / my_tests.to_f * 100).round(2)
     end
 end
